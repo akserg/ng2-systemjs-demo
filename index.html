@@ -1,0 +1,89 @@
+<!--
+// Copyright (C) 2016 Sergey Akopkokhyants
+// This project is licensed under the terms of the MIT license.
+// https://github.com/akserg/ng2-demo
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular2 playground</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/ng2-toasty/ng2-toasty.css">
+
+    <!-- Demo Styling -->
+    <link rel="stylesheet" href="skeleton.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            border-bottom: 1px solid #eee;
+            height: 6.5rem;
+        }
+        .navbar-list {
+            list-style: none;
+            margin-bottom: 0;
+        }
+        .navbar-item {
+            margin-bottom: 0;
+            position: relative;
+        }
+        .navbar-link {
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .2rem;
+            margin-right: 35px;
+            text-decoration: none;
+            line-height: 6.5rem;
+            color: #222;
+        }
+        small {
+            font-size: 6px;
+            opacity: .2;
+        }
+        code {
+            word-break: break-word;
+        }
+        @media (max-width: 400px) {
+            header {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <hello-app>Loading...</hello-app>
+</body>
+
+<!-- ES6-related imports -->
+<script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+<script src="/node_modules/es6-shim/es6-shim.min.js"></script>
+<script src="/node_modules/systemjs/dist/system.src.js"></script>
+<script src="/node_modules/angular2/bundles/http.min.js"></script>
+<script src="/node_modules/rxjs/bundles/Rx.js"></script>
+<script src="/node_modules/angular2/bundles/angular2.js"></script>
+
+<script>
+    //configure system loader
+    System.config({
+        defaultJSExtensions: true,
+        packages: {
+            "/angular2": {"defaultExtension": false}
+        },
+        map: {
+            'ng2-translate': 'node_modules/ng2-translate',
+            'rxjs': 'node_modules/rxjs',
+            'ng2-toasty': 'node_modules/ng2-toasty'
+        }
+    });
+</script>
+
+<script>
+    //bootstrap the Angular2 application
+    System.import('dist/hello').catch(console.log.bind(console));
+</script>
+
+</html>

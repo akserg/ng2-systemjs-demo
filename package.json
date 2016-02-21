@@ -1,0 +1,38 @@
+{
+  "name": "ng2-demo",
+  "version": "1.0.0",
+  "description": "A minimal Angular2 playground for ng2-toasty",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akserg/ng2-demo"
+  },
+  "bugs": {
+    "url": "https://github.com/akserg/ng2-demo/issues"
+  },
+  "scripts": {
+    "install": "typings install",
+    "play": "gulp play",
+    "start": "npm run play"
+  },
+  "homepage": "https://github.com/akserg/ng2-demo#readme",
+  "devDependencies": {
+    "connect": "^3.4.0",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.8.0",
+    "open": "0.0.5",
+    "serve-static": "^1.10.0",
+    "typings": "^0.6.8"
+  },
+  "dependencies": {
+    "angular2": "~2.0.0-beta.6",
+    "es6-promise": "~3.0.2",
+    "es6-shim": "~0.33.3",
+    "ng2-translate": "1.7.1",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.6",
+    "zone.js": "~0.5.10",
+    "ng2-toasty": "^0.1.0"
+  }
+}
