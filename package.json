@@ -32,6 +32,6 @@
     "rxjs": "5.0.0-beta.2",
     "systemjs": "0.19.6",
     "zone.js": "~0.5.10",
-    "ng2-toasty": "^0.1.0"
+    "ng2-toasty": "^0.2.0"
   }
 }
