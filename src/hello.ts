@@ -8,7 +8,6 @@ import {Component, Injectable} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 import {NgForm} from 'angular2/common'
 import {ToastyService, ToastyConfig, Toasty, ToastOptions, ToastData} from 'ng2-toasty/ng2-toasty';
-import {HTTP_PROVIDERS} from 'angular2/http';
 
 @Injectable()
 @Component({
@@ -139,9 +138,6 @@ export class HelloApp {
             },
             onRemove: function(toast:ToastData) {
                 console.log('Toast ' + toast.id + ' has been removed!');
-            },
-            onClick: function(toast:ToastData) {
-                console.log('Toast ' + toast.id + ' has been clicked!');
             }
         };
 
@@ -163,6 +159,5 @@ export class HelloApp {
 
 // Instantiate ToastyService in the bootstrap so that we can keep it as a singleton
 bootstrap(HelloApp, [
-    HTTP_PROVIDERS, 
     ToastyService, ToastyConfig
 ]);

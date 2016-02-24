@@ -62,7 +62,6 @@
 <script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
 <script src="/node_modules/es6-shim/es6-shim.min.js"></script>
 <script src="/node_modules/systemjs/dist/system.src.js"></script>
-<script src="/node_modules/angular2/bundles/http.min.js"></script>
 <script src="/node_modules/rxjs/bundles/Rx.js"></script>
 <script src="/node_modules/angular2/bundles/angular2.js"></script>
 
@@ -71,10 +70,10 @@
     System.config({
         defaultJSExtensions: true,
         packages: {
+            "app": {register: true},
             "/angular2": {"defaultExtension": false}
         },
         map: {
-            'ng2-translate': 'node_modules/ng2-translate',
             'rxjs': 'node_modules/rxjs',
             'ng2-toasty': 'node_modules/ng2-toasty'
         }
