@@ -71,10 +71,12 @@
         defaultJSExtensions: true,
         packages: {
             "app": {register: true},
-            "/angular2": {"defaultExtension": false}
+            "/angular2": {"defaultExtension": false},
+            '/rxjs': {registe: true, "defaultExtension": false}
         },
         map: {
-            'rxjs': 'node_modules/rxjs',
+            // 'rxjs': 'node_modules/rxjs',
+            // 'rxjs': 'node_modules/rxjs/bundles/Rx.js',
             'ng2-toasty': 'node_modules/ng2-toasty'
         }
     });
