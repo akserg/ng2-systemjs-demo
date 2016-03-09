@@ -10,9 +10,9 @@
     "sourceMap": false
   },
   "files": [
-    "./src/hello.ts"
-  ],
-  "exclude": [
-    "node_modules"
+    "./src/boot.ts",
+    "./src/hello.ts",
+    "./src/home.ts",
+    "./src/toast.ts"
   ]
 }

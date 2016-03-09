@@ -52,6 +52,7 @@
             }
         }
     </style>
+    <base href="/">
 </head>
 
 <body>
@@ -64,6 +65,7 @@
 <script src="/node_modules/systemjs/dist/system.src.js"></script>
 <script src="/node_modules/rxjs/bundles/Rx.js"></script>
 <script src="/node_modules/angular2/bundles/angular2.js"></script>
+<script src="/node_modules/angular2/bundles/router.dev.js"></script>
 
 <script>
     //configure system loader
@@ -72,19 +74,18 @@
         packages: {
             "app": {register: true},
             "/angular2": {"defaultExtension": false},
-            '/rxjs': {registe: true, "defaultExtension": false}
+            '/rxjs': {"defaultExtension": false}
         },
         map: {
-            // 'rxjs': 'node_modules/rxjs',
-            // 'rxjs': 'node_modules/rxjs/bundles/Rx.js',
-            'ng2-toasty': 'node_modules/ng2-toasty'
+            'ng2-toasty': 'node_modules/ng2-toasty',
+            'ng2-navigation': 'node_modules/ng2-navigation'
         }
     });
 </script>
 
 <script>
     //bootstrap the Angular2 application
-    System.import('dist/hello').catch(console.log.bind(console));
+    System.import('dist/boot').catch(console.log.bind(console));
 </script>
 
 </html>
