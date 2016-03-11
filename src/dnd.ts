@@ -23,7 +23,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                     <div class="panel-heading">Available products</div>
                     <div class="panel-body">
                         <div *ngFor="#product of availableProducts" class="panel panel-default"
-                            ui-draggable draggable-enabled="product.quantity>0" draggable-data="product" on-drag-success="orderedProduct(product)" allowed-drop-zones="'demo1'">
+                            ui-draggable draggable-enabled="product.quantity>0" draggable-data="product" (onDragSuccess)="orderedProduct(product)" allowed-drop-zones="['demo1']">
                             <div class="panel-body">
                                 <div [hidden]="product.quantity===0">{{product.name}} - {{product.cost}} (available: {{product.quantity}})</div>
                                 <div [hidden]="product.quantity>0"><del>{{product.name}}</del> (NOT available)</div>
@@ -33,7 +33,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 </div>
             </div>
             <div class="col-sm-3">
-                <div ui-droppable on-drop-success="addToBasket(data)" drop-zones="'demo1'" class="panel panel-info">
+                <div ui-droppable (onDropSuccess)="addToBasket($event)" drop-zones="['demo1']" class="panel panel-info">
                     <div class="panel-heading">Shopping Basket (to pay: {{totalCost()}})</div>
                     <div class="panel-body">
                         <div *ngFor="#product of shoppingBasket" class="panel panel-default">
@@ -64,17 +64,21 @@ export class DndDemo {
         orderedProduct.quantity--;
     }
 
-    addToBasket(newProduct: Product) {
-        console.log("Add to basket: " + newProduct.name);
-        for (let indx in this.shoppingBasket) {
-            let product:Product = this.shoppingBasket[indx];
-            if (product.name === newProduct.name) {
-                product.quantity++;
-                return;
-            }
-        }
-        this.shoppingBasket.push(new Product(newProduct.name, 1, newProduct.cost));
+    addToBasket(value) {
+        console.log("Add to basket: " + value);
     }
+    
+    // addToBasket(newProduct: Product) {
+    //     console.log("Add to basket: " + newProduct.name);
+    //     for (let indx in this.shoppingBasket) {
+    //         let product:Product = this.shoppingBasket[indx];
+    //         if (product.name === newProduct.name) {
+    //             product.quantity++;
+    //             return;
+    //         }
+    //     }
+    //     this.shoppingBasket.push(new Product(newProduct.name, 1, newProduct.cost));
+    // }
 
     totalCost():number {
         let cost:number = 0;
