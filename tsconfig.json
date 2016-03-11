@@ -13,6 +13,7 @@
     "./src/boot.ts",
     "./src/hello.ts",
     "./src/home.ts",
-    "./src/toast.ts"
+    "./src/toast.ts",
+    "./src/dnd.ts"
   ]
 }

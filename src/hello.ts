@@ -7,9 +7,11 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
 
+import {Toasty} from 'ng2-toasty/ng2-toasty';
+
 import {HomeDemo} from './home';
 import {ToastDemo} from './toast';
-import {Toasty} from 'ng2-toasty/ng2-toasty';
+import {DndDemo} from './dnd';
 
 @Component({
     selector: 'hello-app',
@@ -22,8 +24,9 @@ import {Toasty} from 'ng2-toasty/ng2-toasty';
         <ul class="navbar-list">
             <li class="navbar-item u-pull-left"><a class="navbar-link" [routerLink]="['Root']">Home</a></li>
             <li class="navbar-item u-pull-left"><a class="navbar-link" [routerLink]="['Toasty']">Toasty</a></li>
+            <li class="navbar-item u-pull-left"><a class="navbar-link" [routerLink]="['Dnd']">Drag&Drop</a></li>
         </ul>
-        
+
     </div>
 </header>
 
@@ -35,6 +38,7 @@ import {Toasty} from 'ng2-toasty/ng2-toasty';
 })
 @RouteConfig([
   {path:'/',        name: 'Root',       component: HomeDemo},
-  {path:'/toasty',  name: 'Toasty',     component: ToastDemo}
+  {path:'/toasty',  name: 'Toasty',     component: ToastDemo},
+  {path:'/dnd',     name: 'Dnd',        component: DndDemo}
 ])
 export class HelloApp { }

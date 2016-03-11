@@ -15,7 +15,8 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     <h1>Welcome to Demo</h1>
     <span>Here are features implemented for you on Angular 2:</span>
     <ul>
-        <li><a class="navbar-link" [routerLink]="['Toasty']">Toasty</a></li>
+        <li><a [routerLink]="['Toasty']">Toasty</a></li>
+        <li><a [routerLink]="['Dnd']">Drag&Drop</a></li>
     </ul>
 </div>`
 })
