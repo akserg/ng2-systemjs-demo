@@ -23,22 +23,22 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                     <div class="panel-heading">Available products</div>
                     <div class="panel-body">
                         <div *ngFor="#product of availableProducts" class="panel panel-default"
-                            ui-draggable draggable-enabled="product.quantity>0" draggable-data="product" (onDragSuccess)="orderedProduct(product)" allowed-drop-zones="['demo1']">
+                            dnd-draggable [dragEnabled]="product.quantity>0" [draggableData]="product" (onDragSuccess)="orderedProduct($event)" [dropZones]="['demo1']">
                             <div class="panel-body">
-                                <div [hidden]="product.quantity===0">{{product.name}} - {{product.cost}} (available: {{product.quantity}})</div>
-                                <div [hidden]="product.quantity>0"><del>{{product.name}}</del> (NOT available)</div>
+                                <div [hidden]="product.quantity===0">{{product.name}} - \${{product.cost}}<br>(available: {{product.quantity}})</div>
+                                <div [hidden]="product.quantity>0"><del>{{product.name}}</del><br>(NOT available)</div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
             <div class="col-sm-3">
-                <div ui-droppable (onDropSuccess)="addToBasket($event)" drop-zones="['demo1']" class="panel panel-info">
-                    <div class="panel-heading">Shopping Basket (to pay: {{totalCost()}})</div>
+                <div dnd-droppable (onDropSuccess)="addToBasket($event)" [dropZones]="['demo1']" class="panel panel-info">
+                    <div class="panel-heading">Shopping Basket<br>(to pay: \${{totalCost()}})</div>
                     <div class="panel-body">
                         <div *ngFor="#product of shoppingBasket" class="panel panel-default">
                             <div class="panel-body">
-                            {{product.name}} (ordered: {{product.quantity}} cost: {{product.cost * product.quantity}})
+                            {{product.name}}<br>(ordered: {{product.quantity}}<br>cost: \${{product.cost * product.quantity}})
                             </div>
                         </div>
                     </div>
@@ -60,25 +60,19 @@ export class DndDemo {
     }
 
     orderedProduct(orderedProduct: Product) {
-        console.log("New ordered product: " + orderedProduct.name);
         orderedProduct.quantity--;
     }
-
-    addToBasket(value) {
-        console.log("Add to basket: " + value);
-    }
     
-    // addToBasket(newProduct: Product) {
-    //     console.log("Add to basket: " + newProduct.name);
-    //     for (let indx in this.shoppingBasket) {
-    //         let product:Product = this.shoppingBasket[indx];
-    //         if (product.name === newProduct.name) {
-    //             product.quantity++;
-    //             return;
-    //         }
-    //     }
-    //     this.shoppingBasket.push(new Product(newProduct.name, 1, newProduct.cost));
-    // }
+    addToBasket(newProduct: Product) {
+        for (let indx in this.shoppingBasket) {
+            let product:Product = this.shoppingBasket[indx];
+            if (product.name === newProduct.name) {
+                product.quantity++;
+                return;
+            }
+        }
+        this.shoppingBasket.push(new Product(newProduct.name, 1, newProduct.cost));
+    }
 
     totalCost():number {
         let cost:number = 0;
