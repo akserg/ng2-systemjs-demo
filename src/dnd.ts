@@ -15,7 +15,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
     template: `
 <div class="container">
     <div>
-        <h4>Simple DnD</h4>
+        <h4>Simple Drag-and-Drop</h4>
         <div class="row">
             <div class="col-sm-3">
                 <div class="panel panel-success">
@@ -38,7 +38,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
             </div>
         </div>
 
-        <h4>Restricted DnD with zones</h4>
+        <h4>Restricted Drag-and-Drop with zones</h4>
         <div class="row">
             <div class="col-sm-3">
                 <div class="panel panel-primary">
@@ -81,7 +81,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
             </div>
         </div>
 
-        <h4>Transfer custom data in DnD</h4>
+        <h4>Transfer custom data in Drag-and-Drop</h4>
         <div class="row">
             <div class="col-sm-3">
                 <div class="panel panel-success">
@@ -106,7 +106,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
             </div>
         </div>
 
-        <h4>Drag And Drop - Shopping basket</h4>
+        <h4>Drag-and-Drop - Shopping basket</h4>
         <div class="row">
 
             <div class="col-sm-3">

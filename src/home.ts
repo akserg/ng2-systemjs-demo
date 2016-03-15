@@ -13,10 +13,10 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     template: `
 <div class="container">
     <h1>Welcome to Demo</h1>
-    <span>Here are features implemented for you on Angular 2:</span>
+    <span>There are features implemented on Angular 2:</span>
     <ul>
         <li><a [routerLink]="['Toasty']">Toasty</a></li>
-        <li><a [routerLink]="['Dnd']">Drag&Drop</a></li>
+        <li><a [routerLink]="['Dnd']">Drag-and-Drop</a></li>
     </ul>
 </div>`
 })

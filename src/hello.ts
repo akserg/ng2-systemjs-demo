@@ -24,7 +24,7 @@ import {DndDemo} from './dnd';
         <ul class="navbar-list">
             <li class="navbar-item u-pull-left"><a class="navbar-link" [routerLink]="['Root']">Home</a></li>
             <li class="navbar-item u-pull-left"><a class="navbar-link" [routerLink]="['Toasty']">Toasty</a></li>
-            <li class="navbar-item u-pull-left"><a class="navbar-link" [routerLink]="['Dnd']">Drag&Drop</a></li>
+            <li class="navbar-item u-pull-left"><a class="navbar-link" [routerLink]="['Dnd']">Drag-and-Drop</a></li>
         </ul>
 
     </div>
