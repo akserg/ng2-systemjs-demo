@@ -168,7 +168,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
         <div class="panel-heading">
           Available boxers
         </div>
-        <div class="panel-body" dnd-sortable-container [sortableZones]="['boxers-zone']" [sortableData]="listBoxers">
+        <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listBoxers">
           <ul class="list-group" >
             <li *ngFor="#item of listBoxers; #i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
           </ul>
@@ -180,7 +180,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
         <div class="panel-heading">
           First Team
         </div>
-        <div class="panel-body" dnd-sortable-container [sortableZones]="['boxers-zone']" [sortableData]="listTeamOne">
+        <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listTeamOne">
           <ul class="list-group" >
             <li *ngFor="#item of listTeamOne; #i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
           </ul>
@@ -192,7 +192,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
         <div class="panel-heading">
           Second Team
         </div>
-        <div class="panel-body" dnd-sortable-container [sortableZones]="['boxers-zone']" [sortableData]="listTeamTwo">
+        <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listTeamTwo">
           <ul class="list-group">
             <li *ngFor="#item of listTeamTwo; #i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
           </ul>
