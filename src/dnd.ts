@@ -231,7 +231,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
             </div>
         </div>
         
-        <h4>Multi list sortable within sortable</h4>
+        <!--h4>Multi list sortable within sortable</h4>
         <div class="btn-group">
             Drag Containers <input type="checkbox" [(ngModel)]="dragOperation"/>
         </div>
@@ -252,8 +252,47 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                     </div>
                 </div>
             </div>
-        </div>
+        </div-->
 
+        <h4>Simple sortable With Drop into something, without delete it</h4>
+        <div class="row">
+            <div class="col-sm-3">
+                Drag Containers <input type="checkbox" [(ngModel)]="dragOperation"/>
+                <div dnd-sortable-container [sortableData]="containers" [dropZones]="['container-dropZone']">
+                    <div class="col-sm3" 
+                            *ngFor="#container of containers; #i = index"
+                            dnd-sortable [sortableIndex]="i" [dragEnabled]="dragOperation">
+                        <div class="panel panel-warning" 
+                            dnd-sortable-container [sortableData]="container.widgets" [dropZones]="['widget-dropZone']">
+                            <div class="panel-heading">
+                                {{container.id}} - {{container.name}}
+                            </div>
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    <li *ngFor="#widget of container.widgets; #x = index" class="list-group-item"
+                                        dnd-sortable [sortableIndex]="x" [dragEnabled]="!dragOperation"
+                                        [dragData]="widget">{{widget.name}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div dnd-droppable (onDropSuccess)="addTo($event)" [dropZones]="['widget-dropZone']" class="panel panel-info">
+                    <div class="panel-heading">Widgets</div>
+                    <div class="panel-body">
+                        <div *ngFor="#widget of widgets" class="panel panel-default">
+                            <div class="panel-body">
+                                {{widget.name}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
     </div>
 </div>`
 })
@@ -273,13 +312,20 @@ export class DndDemo {
     listTwo:Array<string> = ['Coffee','Orange Juice','Red Wine','Unhealty drink!','Water'];
     listRecycled:Array<string> = [];
     
-    dragOperation:boolean = true;
+    dragOperation:boolean = false;
     
     containers:Array<Container> = [
         new Container(1, 'Container 1', [new Widget('1'), new Widget('2')]),
         new Container(2, 'Container 2', [new Widget('3'), new Widget('4')]),
         new Container(3, 'Container 3', [new Widget('5'), new Widget('6')])
     ];
+    
+    widgets:Array<Widget> = [];
+    addTo($event) {
+        if ($event) {
+            this.widgets.push($event);
+        }
+    }
 
     constructor() {
         this.availableProducts.push(new Product("Blue Shoes", 3, 35));
