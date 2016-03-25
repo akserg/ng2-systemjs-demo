@@ -217,11 +217,11 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="panel panel-default"
+                <div class="panel panel-default">
+                    <div class="panel-body" 
                         dnd-sortable-container
                         [dropZones]="['delete-dropZone']"
                         [sortableData]="listRecycled">
-                    <div class="panel-body">
                         Recycle bin: Drag into me to delete it<br/>
                     </div>
                 </div>
@@ -230,29 +230,6 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 </div>
             </div>
         </div>
-        
-        <!--h4>Multi list sortable within sortable</h4>
-        <div class="btn-group">
-            Drag Containers <input type="checkbox" [(ngModel)]="dragOperation"/>
-        </div>
-        <div class="row" dnd-sortable-container [sortableData]="containers" [dropZones]="['container-dropZone']">
-            <div class="col-sm3" 
-                    *ngFor="#container of containers; #i = index"
-                    dnd-sortable [sortableIndex]="i" [dragEnabled]="dragOperation">
-                <div class="panel panel-warning" 
-                    dnd-sortable-container [sortableData]="container.widgets" [dropZones]="['widget-dropZone']">
-                    <div class="panel-heading">
-                        {{container.id}} - {{container.name}}
-                    </div>
-                    <div class="panel-body">
-                        <ul class="list-group">
-                            <li *ngFor="#widget of container.widgets; #x = index" class="list-group-item"
-                                dnd-sortable [sortableIndex]="x" [dragEnabled]="!dragOperation">{{widget.name}}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div-->
 
         <h4>Simple sortable With Drop into something, without delete it</h4>
         <div class="row">
@@ -279,9 +256,9 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 </div>
             </div>
             <div class="col-sm-6">
-                <div dnd-droppable (onDropSuccess)="addTo($event)" [dropZones]="['widget-dropZone']" class="panel panel-info">
+                <div class="panel panel-info">
                     <div class="panel-heading">Widgets</div>
-                    <div class="panel-body">
+                    <div class="panel-body" dnd-droppable (onDropSuccess)="addTo($event)" [dropZones]="['widget-dropZone']">
                         <div *ngFor="#widget of widgets" class="panel panel-default">
                             <div class="panel-body">
                                 {{widget.name}}
