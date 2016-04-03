@@ -1,5 +1,4 @@
 {
-  "version": "1.6.2",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -14,6 +13,7 @@
     "./src/hello.ts",
     "./src/home.ts",
     "./src/toast.ts",
-    "./src/dnd.ts"
+    "./src/dnd.ts",
+    "./src/slim.ts"
   ]
 }

@@ -11,6 +11,7 @@ import {FORM_PROVIDERS} from 'angular2/common';
 
 import {ToastyService, ToastyConfig} from 'ng2-toasty/ng2-toasty';
 import {DND_PROVIDERS} from 'ng2-dnd/ng2-dnd';
+import {SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
 
 import {HelloApp} from './hello';
 
@@ -19,5 +20,5 @@ bootstrap(HelloApp, [
     ROUTER_PROVIDERS, FORM_PROVIDERS,
     provide(LocationStrategy, { useClass: HashLocationStrategy }),
     ToastyService, ToastyConfig,
-    DND_PROVIDERS
+    DND_PROVIDERS, SlimLoadingBarService
 ]);

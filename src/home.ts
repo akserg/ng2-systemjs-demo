@@ -17,6 +17,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     <ul>
         <li><a [routerLink]="['Toasty']">Toasty</a></li>
         <li><a [routerLink]="['Dnd']">Drag-and-Drop</a></li>
+        <li><a [routerLink]="['Slim']">Slim Loading Bar</a></li>
     </ul>
 </div>`
 })
