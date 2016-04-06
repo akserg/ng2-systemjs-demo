@@ -1,6 +1,6 @@
 // Copyright (C) 2016 Sergey Akopkokhyants
 // This project is licensed under the terms of the MIT license.
-// https://github.com/akserg/ng2-demo
+// https://github.com/akserg
 
 'use strict';
 
@@ -31,9 +31,7 @@ import {SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
 })
 export class SlimDemo {
 
-    constructor(private slimLoader:SlimLoadingBarService) {
-        console.log('HelloApp.slimLoader', this.slimLoader);
-    }
+    constructor(private slimLoader:SlimLoadingBarService) {}
 
     setProgres30() {
         this.slimLoader.progress = 30;

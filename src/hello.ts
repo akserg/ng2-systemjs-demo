@@ -1,6 +1,6 @@
 // Copyright (C) 2016 Sergey Akopkokhyants
 // This project is licensed under the terms of the MIT license.
-// https://github.com/akserg/ng2-demo
+// https://github.com/akserg
 
 'use strict';
 
@@ -49,22 +49,17 @@ import {SlimDemo} from './slim';
 ])
 export class HelloApp {
 	constructor(private slimLoader:SlimLoadingBarService, private router:Router) {
-        console.log('HelloApp.slimLoader', this.slimLoader);
 		this.runSlimLoader();
 		this.router.subscribe((value:any) => {
-			console.log('Router', value);
 			this.runSlimLoader();
 		}, (error:any) => {
-			console.log('Router error', error);
 			this.slimLoader.complete();
 		});
 	}
 
 	runSlimLoader() {
-        console.log('Run Slim');
 		this.slimLoader.start();
 		setTimeout(() => {
-            console.log('Stop Slim');
 			this.slimLoader.complete();
 		}, 1000);
 	}
