@@ -8,7 +8,7 @@ import {Component} from 'angular2/core';
 import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Toasty} from 'ng2-toasty/ng2-toasty';
-import {SlimLoadingBar} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
+import {SlimLoadingBar, SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
 
 import {HomeDemo} from './home';
 import {ToastDemo} from './toast';
@@ -37,8 +37,9 @@ import {SlimDemo} from './slim';
 <div>
     <router-outlet></router-outlet>
     <ng2-toasty></ng2-toasty>
-    <ng2-slim-loading-bar></ng2-slim-loading-bar>
-</div>`
+</div>
+<ng2-slim-loading-bar></ng2-slim-loading-bar>
+`
 })
 @RouteConfig([
   {path:'/',        name: 'Root',       component: HomeDemo},
@@ -46,4 +47,25 @@ import {SlimDemo} from './slim';
   {path:'/dnd',     name: 'Dnd',        component: DndDemo},
   {path:'/slim',    name: 'Slim',       component: SlimDemo}
 ])
-export class HelloApp { }
+export class HelloApp {
+	constructor(private slimLoader:SlimLoadingBarService, private router:Router) {
+        console.log('HelloApp.slimLoader', this.slimLoader);
+		this.runSlimLoader();
+		this.router.subscribe((value:any) => {
+			console.log('Router', value);
+			this.runSlimLoader();
+		}, (error:any) => {
+			console.log('Router error', error);
+			this.slimLoader.complete();
+		});
+	}
+
+	runSlimLoader() {
+        console.log('Run Slim');
+		this.slimLoader.start();
+		setTimeout(() => {
+            console.log('Stop Slim');
+			this.slimLoader.complete();
+		}, 1000);
+	}
+}

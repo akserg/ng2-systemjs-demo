@@ -15,10 +15,13 @@ import {SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
 
 import {HelloApp} from './hello';
 
-// Instantiate ToastyService in the bootstrap so that we can keep it as a singleton
-bootstrap(HelloApp, [
-    ROUTER_PROVIDERS, FORM_PROVIDERS,
-    provide(LocationStrategy, { useClass: HashLocationStrategy }),
-    ToastyService, ToastyConfig,
-    DND_PROVIDERS, SlimLoadingBarService
-]);
+//document.addEventListener('DOMContentLoaded', function main() {
+	// Instantiate ToastyService in the bootstrap so that we can keep it as a singleton
+	bootstrap(HelloApp, [
+	    ROUTER_PROVIDERS, FORM_PROVIDERS,
+    	provide(LocationStrategy, { useClass: HashLocationStrategy }),
+	    ToastyService, ToastyConfig,
+    	DND_PROVIDERS, SlimLoadingBarService
+	])
+	.catch(err => console.error(err));
+//});

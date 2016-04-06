@@ -16,62 +16,65 @@ import {SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
     template: `
 <div class="container">
     <br />
-    <button (click)="setProgres30()">Set progress equals 30</button>
-    <button (click)="startProgress()">Start progress</button>
-    <button (click)="completeProgress()">Complete progress</button>
-    <button (click)="stopProgress()">Stop progress</button>
-    <button (click)="resetProgress()">Reset progress</button><br>
-    <button (click)="incrementProgress()">Increment progress</button>
-    <button (click)="changeProgressTo4px()">Change height to 4px</button>
-    <button (click)="changeProgressTo2px()">Change height to 2px</button>
-    <button (click)="changeProgressToBlue()">Change color to blue</button>
-    <button (click)="changeProgressToFirebrick()">Change height to firebrick</button>
+    <button (click)="setProgres30()">Set progress equals 30</button><br />
+    <button (click)="incrementProgress()">Increment progress</button><br />
+    <button (click)="startProgress()">Start progress</button><br />
+    <button (click)="completeProgress()">Complete progress</button><br />
+    <button (click)="stopProgress()">Stop progress</button><br />
+    <button (click)="resetProgress()">Reset progress</button><br /><br />
+
+    <button (click)="changeProgressTo4px()">Change height to 4px</button><br />
+    <button (click)="changeProgressTo2px()">Change height to 2px</button><br />
+    <button (click)="changeProgressToBlue()">Change color to blue</button><br />
+    <button (click)="changeProgressToFirebrick()">Change color to firebrick</button><br />
 </div>`
 })
 export class SlimDemo {
 
-    constructor(private slimLoadingBarService:SlimLoadingBarService) { }
-    
-    setProgres30() {
-        this.slimLoadingBarService.progress = 30;
+    constructor(private slimLoader:SlimLoadingBarService) {
+        console.log('HelloApp.slimLoader', this.slimLoader);
     }
-    
+
+    setProgres30() {
+        this.slimLoader.progress = 30;
+    }
+
     startProgress() {
-        // We can listen when loading will be completed 
-        this.slimLoadingBarService.start(() => {
+        // We can listen when loading will be completed
+        this.slimLoader.start(() => {
             console.log('Loading complete');
         });
     }
-    
+
     completeProgress() {
-        this.slimLoadingBarService.complete();
+        this.slimLoader.complete();
     }
 
     stopProgress() {
-        this.slimLoadingBarService.stop();
+        this.slimLoader.stop();
     }
-    
+
     resetProgress() {
-        this.slimLoadingBarService.reset();
+        this.slimLoader.reset();
     }
-    
+
     incrementProgress() {
-        this.slimLoadingBarService.progress++;
+        this.slimLoader.progress++;
     }
-    
+
     changeProgressTo4px() {
-        this.slimLoadingBarService.height = '4px';
+        this.slimLoader.height = '4px';
     }
-    
+
     changeProgressTo2px() {
-        this.slimLoadingBarService.height = '2px';
+        this.slimLoader.height = '2px';
     }
-    
+
     changeProgressToBlue() {
-        this.slimLoadingBarService.color = 'blue';
+        this.slimLoader.color = 'blue';
     }
-    
+
     changeProgressToFirebrick() {
-        this.slimLoadingBarService.color = 'firebrick';
+        this.slimLoader.color = 'firebrick';
     }
 }
