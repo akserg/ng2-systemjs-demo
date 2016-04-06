@@ -31,7 +31,7 @@ import {SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
 })
 export class SlimDemo {
 
-    constructor(private slimLoader:SlimLoadingBarService) {}
+    constructor(private slimLoader: SlimLoadingBarService) {}
 
     setProgres30() {
         this.slimLoader.progress = 30;

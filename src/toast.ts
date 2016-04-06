@@ -144,7 +144,7 @@ export class ToastDemo {
     newCountdownToast() {
         let interval = 1000;
         let seconds = this.options.timeout / 1000;
-        let subscription:Subscription;
+        let subscription: Subscription;
 
         let toastOptions: ToastOptions = {
             title: this.getTitle(seconds || 0),
@@ -157,7 +157,7 @@ export class ToastDemo {
                 // Run the timer with 1 second iterval
                 let observable = Observable.interval(interval).take(seconds);
                 // Start listen seconds bit
-                subscription = observable.subscribe((count:number) => {
+                subscription = observable.subscribe((count: number) => {
                     // Update title
                     toast.title = this.getTitle(seconds - count - 1 || 0);
                     // Update message

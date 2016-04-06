@@ -42,25 +42,25 @@ import {SlimDemo} from './slim';
 `
 })
 @RouteConfig([
-  {path:'/',        name: 'Root',       component: HomeDemo},
-  {path:'/toasty',  name: 'Toasty',     component: ToastDemo},
-  {path:'/dnd',     name: 'Dnd',        component: DndDemo},
-  {path:'/slim',    name: 'Slim',       component: SlimDemo}
+  {path: '/',        name: 'Root',       component: HomeDemo},
+  {path: '/toasty',  name: 'Toasty',     component: ToastDemo},
+  {path: '/dnd',     name: 'Dnd',        component: DndDemo},
+  {path: '/slim',    name: 'Slim',       component: SlimDemo}
 ])
 export class HelloApp {
-	constructor(private slimLoader:SlimLoadingBarService, private router:Router) {
-		this.runSlimLoader();
-		this.router.subscribe((value:any) => {
-			this.runSlimLoader();
-		}, (error:any) => {
-			this.slimLoader.complete();
-		});
-	}
+    constructor(private slimLoader: SlimLoadingBarService, private router: Router) {
+        this.runSlimLoader();
+        this.router.subscribe((value: any) => {
+            this.runSlimLoader();
+        }, (error: any) => {
+            this.slimLoader.complete();
+        });
+    }
 
-	runSlimLoader() {
-		this.slimLoader.start();
-		setTimeout(() => {
-			this.slimLoader.complete();
-		}, 1000);
-	}
+    runSlimLoader() {
+        this.slimLoader.start();
+        setTimeout(() => {
+            this.slimLoader.complete();
+        }, 1000);
+    }
 }

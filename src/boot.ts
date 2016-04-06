@@ -17,8 +17,8 @@ import {HelloApp} from './hello';
 
 bootstrap(HelloApp, [
     ROUTER_PROVIDERS, FORM_PROVIDERS,
-   	provide(LocationStrategy, { useClass: HashLocationStrategy }),
+    provide(LocationStrategy, { useClass: HashLocationStrategy }),
     ToastyService, ToastyConfig,
-   	DND_PROVIDERS, SlimLoadingBarService
+    DND_PROVIDERS, SlimLoadingBarService
 ])
 .catch(err => console.error(err));
