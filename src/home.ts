@@ -5,11 +5,12 @@
 'use strict';
 
 import {Component, Injectable} from 'angular2/core';
+import {COMMON_DIRECTIVES} from 'angular2/common';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
     selector: 'home-demo',
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, COMMON_DIRECTIVES],
     template: `
 <div class="container">
     <h1>Welcome to Demo</h1>
