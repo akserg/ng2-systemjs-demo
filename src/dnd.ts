@@ -100,7 +100,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)">
                     <div class="panel-heading">Place to drop (Items:{{receivedData.length}})</div>
                     <div class="panel-body">
-                        <div [hidden]="!receivedData.length > 0" *ngFor="#data of receivedData">{{data | json}}</div>
+                        <div [hidden]="!receivedData.length > 0" *ngFor="let data of receivedData">{{data | json}}</div>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 <div class="panel panel-success">
                     <div class="panel-heading">Available products</div>
                     <div class="panel-body">
-                        <div *ngFor="#product of availableProducts" class="panel panel-default"
+                        <div *ngFor="let product of availableProducts" class="panel panel-default"
                             dnd-draggable [dragEnabled]="product.quantity>0" [dragData]="product" (onDragSuccess)="orderedProduct($event)" [dropZones]="['demo1']">
                             <div class="panel-body">
                                 <div [hidden]="product.quantity===0">{{product.name}} - \${{product.cost}}<br>(available: {{product.quantity}})</div>
@@ -127,7 +127,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 <div dnd-droppable (onDropSuccess)="addToBasket($event)" [dropZones]="['demo1']" class="panel panel-info">
                     <div class="panel-heading">Shopping Basket<br>(to pay: \${{totalCost()}})</div>
                     <div class="panel-body">
-                        <div *ngFor="#product of shoppingBasket" class="panel panel-default">
+                        <div *ngFor="let product of shoppingBasket" class="panel panel-default">
                             <div class="panel-body">
                             {{product.name}}<br>(ordered: {{product.quantity}}<br>cost: \${{product.cost * product.quantity}})
                             </div>
@@ -146,7 +146,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                     </div>
                     <div class="panel-body">
                         <ul class="list-group" dnd-sortable-container [sortableData]="listOne">
-                            <li *ngFor="#item of listOne; #i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+                            <li *ngFor="let item of listOne; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
                         </ul>
                     </div>
                 </div>
@@ -155,7 +155,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 <div class="panel panel-default">
                     <div class="panel-body">
                         My prefences:<br/>
-                        <span *ngFor="#item of listOne; #i = index">{{i + 1}}) {{item}}<br/></span>
+                        <span *ngFor="let item of listOne; let i = index">{{i + 1}}) {{item}}<br/></span>
                     </div>
                 </div>
             </div>
@@ -170,7 +170,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 </div>
                 <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listBoxers">
                 <ul class="list-group" >
-                    <li *ngFor="#item of listBoxers; #i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+                    <li *ngFor="let item of listBoxers; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
                 </ul>
                 </div>
             </div>
@@ -182,7 +182,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 </div>
                 <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listTeamOne">
                 <ul class="list-group" >
-                    <li *ngFor="#item of listTeamOne; #i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+                    <li *ngFor="let item of listTeamOne; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
                 </ul>
                 </div>
             </div>
@@ -194,7 +194,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 </div>
                 <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listTeamTwo">
                 <ul class="list-group">
-                    <li *ngFor="#item of listTeamTwo; #i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+                    <li *ngFor="let item of listTeamTwo; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
                 </ul>
                 </div>
             </div>
@@ -210,7 +210,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                     </div>
                     <div class="panel-body">
                         <ul class="list-group" dnd-sortable-container [sortableData]="listTwo" [dropZones]="['delete-dropZone']">
-                            <li *ngFor="#item of listTwo; #i = index" class="list-group-item"
+                            <li *ngFor="let item of listTwo; let i = index" class="list-group-item"
                             dnd-sortable [sortableIndex]="i">{{item}}</li>
                         </ul>
                     </div>
@@ -237,7 +237,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 Drag Containers <input type="checkbox" [(ngModel)]="dragOperation"/>
                 <div dnd-sortable-container [sortableData]="containers" [dropZones]="['container-dropZone']">
                     <div class="col-sm3"
-                            *ngFor="#container of containers; #i = index"
+                            *ngFor="let container of containers; let i = index"
                             dnd-sortable [sortableIndex]="i" [dragEnabled]="dragOperation">
                         <div class="panel panel-warning"
                             dnd-sortable-container [sortableData]="container.widgets" [dropZones]="['widget-dropZone']">
@@ -246,7 +246,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                             </div>
                             <div class="panel-body">
                                 <ul class="list-group">
-                                    <li *ngFor="#widget of container.widgets; #x = index" class="list-group-item"
+                                    <li *ngFor="let widget of container.widgets; let x = index" class="list-group-item"
                                         dnd-sortable [sortableIndex]="x" [dragEnabled]="!dragOperation"
                                         [dragData]="widget">{{widget.name}}</li>
                                 </ul>
@@ -259,7 +259,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 <div class="panel panel-info">
                     <div class="panel-heading">Widgets</div>
                     <div class="panel-body" dnd-droppable (onDropSuccess)="addTo($event)" [dropZones]="['widget-dropZone']">
-                        <div *ngFor="#widget of widgets" class="panel panel-default">
+                        <div *ngFor="let widget of widgets" class="panel panel-default">
                             <div class="panel-body">
                                 {{widget.name}}
                             </div>

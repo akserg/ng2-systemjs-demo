@@ -28,12 +28,12 @@ import {ToastyService, ToastyConfig, Toasty, ToastOptions, ToastData} from 'ng2-
 
                 <label for="theme">Theme</label>
                 <select class="u-full-width" [(ngModel)]="options.theme" ngControl="theme" #theme="ngForm" >
-                  <option *ngFor="#theme of themes" [value]="theme.code">{{theme.name}}</option>
+                  <option *ngFor="let theme of themes" [value]="theme.code">{{theme.name}}</option>
                 </select>
 
                 <label for="theme">Type</label>
                 <select class="u-full-width" [(ngModel)]="options.type" ngControl="type" #type="ngForm" >
-                  <option *ngFor="#type of types" [value]="type.code">{{type.name}}</option>
+                  <option *ngFor="let type of types" [value]="type.code">{{type.name}}</option>
                 </select>
 
                 <label for="timeout">Timeout</label>
