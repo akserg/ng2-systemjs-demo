@@ -14,6 +14,7 @@
     "./src/home.ts",
     "./src/toast.ts",
     "./src/dnd.ts",
-    "./src/slim.ts"
+    "./src/slim.ts",
+    "!node_modules"
   ]
 }

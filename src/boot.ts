@@ -4,11 +4,10 @@
 
 'use strict';
 
-import {provide} from 'angular2/core';
-import {bootstrap} from 'angular2/platform/browser';
-import {ROUTER_PROVIDERS} from 'angular2/router';
-import {LocationStrategy, HashLocationStrategy} from 'angular2/platform/common';
-import {FORM_PROVIDERS} from 'angular2/common';
+import {provide} from '@angular/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
+import {FORM_PROVIDERS, LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 import {ToastyService, ToastyConfig} from 'ng2-toasty/ng2-toasty';
 import {DND_PROVIDERS} from 'ng2-dnd/ng2-dnd';
