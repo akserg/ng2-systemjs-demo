@@ -8,13 +8,9 @@
     "removeComments": true,
     "sourceMap": true
   },
-  "files": [
-    "./src/boot.ts",
-    "./src/hello.ts",
-    "./src/home.ts",
-    "./src/toast.ts",
-    "./src/dnd.ts",
-    "./src/slim.ts",
-    "!node_modules"
+  "exclude": [
+    "node_modules",
+    "typings/main.d.ts",
+    "typings/main"
   ]
 }

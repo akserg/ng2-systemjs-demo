@@ -15,16 +15,6 @@
     "start": "npm run play"
   },
   "homepage": "https://github.com/akserg/ng2-demo#readme",
-  "devDependencies": {
-    "connect": "^3.4.0",
-    "del": "^1.2.0",
-    "gulp": "^3.9.0",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-typescript": "^2.8.0",
-    "open": "0.0.5",
-    "serve-static": "^1.10.0",
-    "typings": "^0.6.8"
-  },
   "dependencies": {
     "@angular/common": "^2.0.0-rc.1",
     "@angular/compiler": "^2.0.0-rc.1",
@@ -40,8 +30,17 @@
     "ng2-dnd": "^1.6.1",
     "ng2-toasty": "^1.7.1",
     "ng2-slim-loading-bar": "^1.2.1",
-    "lodash": "^4.12.0",
     "systemjs": "0.19.27",
     "angular2-in-memory-web-api": "0.0.7"
+  },
+  "devDependencies": {
+    "connect": "^3.4.0",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-typescript": "^2.8.0",
+    "open": "0.0.5",
+    "serve-static": "^1.10.0",
+    "typings": "^0.6.8"
   }
 }
