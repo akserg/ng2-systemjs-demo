@@ -30,9 +30,10 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 </div>
             </div>
             <div class="col-sm-3">
-                <div dnd-droppable class="panel panel-info">
+                <div dnd-droppable class="panel panel-info" (onDropSuccess)="simpleDrop=$event">
                     <div class="panel-heading">Place to drop</div>
                     <div class="panel-body">
+                    	<div *ngIf="simpleDrop">Item was dropped here</div>
                     </div>
                 </div>
             </div>
@@ -66,16 +67,18 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
                 </div>
             </div>
             <div class="col-sm-3">
-                <div dnd-droppable class="panel panel-info" [dropZones]="['zone1']">
+                <div dnd-droppable class="panel panel-info" [dropZones]="['zone1']" (onDropSuccess)="restrictedDrop1=$event">
                     <div class="panel-heading">Zone 1</div>
                     <div class="panel-body">
+                      <div *ngIf="restrictedDrop1">Item was dropped here</div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-3">
-                <div dnd-droppable class="panel panel-warning" [dropZones]="['zone2']">
+                <div dnd-droppable class="panel panel-warning" [dropZones]="['zone2']" (onDropSuccess)="restrictedDrop2=$event">
                     <div class="panel-heading">Zone 2</div>
                     <div class="panel-body">
+                      <div *ngIf="restrictedDrop2">Item was dropped here</div>
                     </div>
                 </div>
             </div>
@@ -274,6 +277,10 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
 </div>`
 })
 export class DndDemo {
+    simpleDrop: any = null;
+    restrictedDrop1: any = null;
+    restrictedDrop2: any = null;
+
     transferData: Object = {id: 1, msg: 'Hello'};
     receivedData: Array<any> = [];
 
