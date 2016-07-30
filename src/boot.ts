@@ -6,19 +6,13 @@
 
 import {provide} from '@angular/core';
 import {bootstrap} from '@angular/platform-browser-dynamic';
-import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
-import {FORM_PROVIDERS, LocationStrategy, HashLocationStrategy} from '@angular/common';
-
-import {ToastyService, ToastyConfig} from 'ng2-toasty/ng2-toasty';
-import {DND_PROVIDERS} from 'ng2-dnd/ng2-dnd';
-import {SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
+import {appRouterProviders} from './app.routes';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 import {HelloApp} from './hello';
 
 bootstrap(HelloApp, [
-    ROUTER_PROVIDERS, FORM_PROVIDERS,
-    provide(LocationStrategy, { useClass: HashLocationStrategy }),
-    ToastyService, ToastyConfig,
-    DND_PROVIDERS, SlimLoadingBarService
+    appRouterProviders,
+    provide(LocationStrategy, { useClass: HashLocationStrategy })
 ])
 .catch(err => console.error(err));

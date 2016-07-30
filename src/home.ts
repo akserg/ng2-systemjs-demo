@@ -5,7 +5,7 @@
 'use strict';
 
 import {Component, Injectable} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
     selector: 'home-demo',
@@ -15,9 +15,9 @@ import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
     <h1>Welcome to Demo</h1>
     <span>There are features implemented on Angular 2:</span>
     <ul>
-        <li><a [routerLink]="['Toasty']">Toasty</a></li>
-        <li><a [routerLink]="['Dnd']">Drag-and-Drop</a></li>
-        <li><a [routerLink]="['Slim']">Slim Loading Bar</a></li>
+        <li><a [routerLink]="['/toasty']">Toasty</a></li>
+        <li><a [routerLink]="['/dnd']">Drag-and-Drop</a></li>
+        <li><a [routerLink]="['/slim']">Slim Loading Bar</a></li>
     </ul>
 </div>`
 })
