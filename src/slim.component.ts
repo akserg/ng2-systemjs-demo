@@ -12,7 +12,7 @@ import {Subject, Observable, Subscription} from 'rxjs/Rx';
 import {SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
 
 @Component({
-    selector: 'slim-demo',
+    selector: 'demo-slim',
     template: `
 <div class="container">
     <br />
@@ -29,7 +29,7 @@ import {SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
     <button (click)="changeProgressToFirebrick()">Change color to firebrick</button><br />
 </div>`
 })
-export class SlimDemo {
+export class SlimComponent {
 
     constructor(private slimLoader: SlimLoadingBarService) {}
 

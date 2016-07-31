@@ -14,7 +14,7 @@ import {ToastyService, ToastyConfig} from 'ng2-toasty/ng2-toasty';
 import {DND_PROVIDERS} from 'ng2-dnd/ng2-dnd';
 
 @Component({
-    selector: 'hello-app',
+    selector: 'demo-app',
     directives: [ROUTER_DIRECTIVES, Toasty, SlimLoadingBar],
     providers: [ToastyService, ToastyConfig, DND_PROVIDERS, SlimLoadingBarService],
     template:
@@ -40,7 +40,7 @@ import {DND_PROVIDERS} from 'ng2-dnd/ng2-dnd';
 <ng2-slim-loading-bar></ng2-slim-loading-bar>
 `
 })
-export class HelloApp {
+export class AppComponents {
     private sub: any;
 
     constructor(private slimLoader: SlimLoadingBarService, private router: Router) {
@@ -65,6 +65,6 @@ export class HelloApp {
         this.slimLoader.start();
         setTimeout(() => {
             this.slimLoader.complete();
-        }, 1000);
+        }, 500);
     }
 }

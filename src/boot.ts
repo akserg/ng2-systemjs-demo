@@ -8,11 +8,13 @@ import {provide} from '@angular/core';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {appRouterProviders} from './app.routes';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import {disableDeprecatedForms, provideForms} from '@angular/forms';
 
-import {HelloApp} from './hello';
+import {AppComponents} from './app.component';
 
-bootstrap(HelloApp, [
+bootstrap(AppComponents, [
     appRouterProviders,
-    provide(LocationStrategy, { useClass: HashLocationStrategy })
-])
-.catch(err => console.error(err));
+    provide(LocationStrategy, { useClass: HashLocationStrategy }),
+    disableDeprecatedForms(),
+    provideForms()
+]).catch(err => console.error(err));

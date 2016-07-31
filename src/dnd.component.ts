@@ -10,7 +10,7 @@ import {COMMON_DIRECTIVES} from '@angular/common';
 import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
 
 @Component({
-    selector: 'dnd-demo',
+    selector: 'demo-dnd',
     directives: [COMMON_DIRECTIVES, DND_DIRECTIVES],
     template: `
 <div class="container">
@@ -276,7 +276,7 @@ import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
     </div>
 </div>`
 })
-export class DndDemo {
+export class DndComponent {
     simpleDrop: any = null;
     restrictedDrop1: any = null;
     restrictedDrop2: any = null;

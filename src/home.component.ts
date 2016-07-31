@@ -8,7 +8,7 @@ import {Component, Injectable} from '@angular/core';
 import {ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
-    selector: 'home-demo',
+    selector: 'demo-home',
     directives: [ROUTER_DIRECTIVES],
     template: `
 <div class="container">
@@ -21,4 +21,4 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
     </ul>
 </div>`
 })
-export class HomeDemo { }
+export class HomeComponent { }

@@ -1,15 +1,15 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
 
-import {HomeDemo} from './home';
-import {ToastDemo} from './toast';
-import {DndDemo} from './dnd';
-import {SlimDemo} from './slim';
+import {HomeComponent} from './home.component';
+import {ToastComponent} from './toast.component';
+import {DndComponent} from './dnd.component';
+import {SlimComponent} from './slim.component';
 
 const routes: RouterConfig = [
-  {path: '',        component: HomeDemo},
-  {path: 'toasty',  component: ToastDemo},
-  {path: 'dnd',     component: DndDemo},
-  {path: 'slim',    component: SlimDemo}
+  {path: '',        component: HomeComponent},
+  {path: 'toasty',  component: ToastComponent},
+  {path: 'dnd',     component: DndComponent},
+  {path: 'slim',    component: SlimComponent}
 ];
 
 export const appRouterProviders = [

@@ -5,43 +5,43 @@
 'use strict';
 
 import {Component} from '@angular/core';
-import {FORM_DIRECTIVES} from '@angular/common';
+import {NgForm} from '@angular/forms';
 
 import {Subject, Observable, Subscription} from 'rxjs/Rx';
 
 import {ToastyService, ToastyConfig, Toasty, ToastOptions, ToastData} from 'ng2-toasty/ng2-toasty';
 
 @Component({
-    selector: 'toast-demo',
-    directives: [FORM_DIRECTIVES],
+    selector: 'demo-toast',
+    directives: [NgForm],
     template: `
 <div class="container">
     <br />
-    <form #heroForm="ngForm">
+    <form>
         <div class="row">
              <div class="four columns">
                 <label for="title">Title</label>
-                <input class="u-full-width" type="text" id="title" [(ngModel)]="options.title" ngControl="title" #title="ngForm">
+                <input class="u-full-width" type="text" id="title" [(ngModel)]="options.title" name="title">
 
                 <label for="msg">Message</label>
-                <input class="u-full-width" type="text" id="msg" [(ngModel)]="options.msg" ngControl="msg" #msg="ngForm">
+                <input class="u-full-width" type="text" id="msg" [(ngModel)]="options.msg" name="msg">
 
                 <label for="theme">Theme</label>
-                <select class="u-full-width" [(ngModel)]="options.theme" ngControl="theme" #theme="ngForm" >
+                <select class="u-full-width" [(ngModel)]="options.theme" name="theme">
                   <option *ngFor="let theme of themes" [value]="theme.code">{{theme.name}}</option>
                 </select>
 
                 <label for="theme">Type</label>
-                <select class="u-full-width" [(ngModel)]="options.type" ngControl="type" #type="ngForm" >
+                <select class="u-full-width" [(ngModel)]="options.type" name="type">
                   <option *ngFor="let type of types" [value]="type.code">{{type.name}}</option>
                 </select>
 
                 <label for="timeout">Timeout</label>
-                <input type="text" class="u-full-width" id="timeout" [(ngModel)]="options.timeout" placeholder="5000" ngControl="timeout" #timeout="ngForm"/>
+                <input type="text" class="u-full-width" id="timeout" [(ngModel)]="options.timeout" placeholder="5000" name="timeout"/>
              </div>
              <div class="four columns">
                 <label for="showclose">Show Close Icon</label>
-                <input type="checkbox" id="showclose" [(ngModel)]="options.showClose" ngControl="showClose" #showClose="ngForm"/>
+                <input type="checkbox" id="showclose" [(ngModel)]="options.showClose" name="showClose"/>
             </div>
             <div class="four columns">
                 <pre>
@@ -64,7 +64,7 @@ import {ToastyService, ToastyConfig, Toasty, ToastOptions, ToastData} from 'ng2-
     </form>
 </div>`
 })
-export class ToastDemo {
+export class ToastComponent {
 
     themes = [{
         name: 'Default Theme',
