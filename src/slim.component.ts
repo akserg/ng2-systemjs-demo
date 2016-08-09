@@ -9,7 +9,7 @@ import {FORM_DIRECTIVES} from '@angular/common';
 
 import {Subject, Observable, Subscription} from 'rxjs/Rx';
 
-import {SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
+import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 
 @Component({
     selector: 'demo-slim',

@@ -34,7 +34,7 @@
 
     "ng2-dnd": "^1.11.0",
     "ng2-toasty": "^1.8.0",
-    "ng2-slim-loading-bar": "^1.2.4",
+    "ng2-slim-loading-bar": "^1.4.0",
 
     "systemjs": "0.19.34",
     "angular2-in-memory-web-api": "0.0.14"

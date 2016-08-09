@@ -8,14 +8,14 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ROUTER_DIRECTIVES, ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 
 import {Toasty} from 'ng2-toasty/ng2-toasty';
-import {SlimLoadingBar, SlimLoadingBarService} from 'ng2-slim-loading-bar/ng2-slim-loading-bar';
+import {SlimLoadingBarComponent, SlimLoadingBarService} from 'ng2-slim-loading-bar';
 
 import {ToastyService, ToastyConfig} from 'ng2-toasty/ng2-toasty';
 import {DND_PROVIDERS} from 'ng2-dnd/ng2-dnd';
 
 @Component({
     selector: 'demo-app',
-    directives: [ROUTER_DIRECTIVES, Toasty, SlimLoadingBar],
+    directives: [ROUTER_DIRECTIVES, Toasty, SlimLoadingBarComponent],
     providers: [ToastyService, ToastyConfig, DND_PROVIDERS, SlimLoadingBarService],
     template:
     `

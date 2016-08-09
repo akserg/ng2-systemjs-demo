@@ -17,11 +17,11 @@
     'rxjs':                       { defaultExtension: 'js' },
     'ng2-toasty':                 { defaultExtension: 'js' },
     'ng2-dnd':                    { defaultExtension: 'js' },
-    'ng2-slim-loading-bar':       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { defaultExtension: 'js' },
   };
 
   var packageNames = [
+    // Angular Modules
     '@angular/common',
     '@angular/compiler',
     '@angular/core',
@@ -32,6 +32,8 @@
     '@angular/router',
     '@angular/testing',
     '@angular/upgrade',
+    // Custom modules
+    'ng2-slim-loading-bar'
   ];
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
