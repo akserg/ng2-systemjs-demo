@@ -318,11 +318,13 @@ export class DndComponent {
         this.availableProducts.push(new Product('Blue Jeans', 4, 60));
     }
 
-    orderedProduct(orderedProduct: Product) {
+    orderedProduct($event) {
+        let orderedProduct: Product = $event.dragData;
         orderedProduct.quantity--;
     }
 
-    addToBasket(newProduct: Product) {
+    addToBasket($event) {
+        let newProduct: Product = $event.dragData;
         for (let indx in this.shoppingBasket) {
             let product: Product = this.shoppingBasket[indx];
             if (product.name === newProduct.name) {
@@ -331,6 +333,9 @@ export class DndComponent {
             }
         }
         this.shoppingBasket.push(new Product(newProduct.name, 1, newProduct.cost));
+        this.shoppingBasket.sort((a: Product, b: Product) => {
+            return a.name.localeCompare(b.name);
+        });
     }
 
     totalCost(): number {
