@@ -307,7 +307,7 @@ export class DndComponent {
     widgets: Array<Widget> = [];
     addTo($event) {
         if ($event) {
-            this.widgets.push($event);
+            this.widgets.push($event.dragData);
         }
     }
 
