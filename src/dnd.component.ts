@@ -1,17 +1,11 @@
-// Copyright (C) 2016 Sergey Akopkokhyants
-// This project is licensed under the terms of the MIT license.
-// https://github.com/akserg
-
-'use strict';
+// // Copyright (C) 2016 Sergey Akopkokhyants
+// // This project is licensed under the terms of the MIT license.
+// // https://github.com/akserg
 
 import {Component, Injectable} from '@angular/core';
-import {COMMON_DIRECTIVES} from '@angular/common';
-
-import {DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
 
 @Component({
     selector: 'demo-dnd',
-    directives: [COMMON_DIRECTIVES, DND_DIRECTIVES],
     template: `
 <div class="container">
     <div>

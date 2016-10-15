@@ -1,13 +1,10 @@
-// Copyright (C) 2016 Sergey Akopkokhyants
-// This project is licensed under the terms of the MIT license.
-// https://github.com/akserg
-
-'use strict';
+// // Copyright (C) 2016 Sergey Akopkokhyants
+// // This project is licensed under the terms of the MIT license.
+// // https://github.com/akserg
 
 import {Component} from '@angular/core';
-import {FORM_DIRECTIVES} from '@angular/common';
 
-import {Subject, Observable, Subscription} from 'rxjs/Rx';
+// import {Subject, Observable, Subscription} from 'rxjs/Rx';
 
 import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 

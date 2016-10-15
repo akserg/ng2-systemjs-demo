@@ -1,15 +1,11 @@
-// Copyright (C) 2016 Sergey Akopkokhyants
-// This project is licensed under the terms of the MIT license.
-// https://github.com/akserg
+// // Copyright (C) 2016 Sergey Akopkokhyants
+// // This project is licensed under the terms of the MIT license.
+// // https://github.com/akserg
 
-'use strict';
-
-import {Component, Injectable} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'demo-home',
-    directives: [ROUTER_DIRECTIVES],
     template: `
 <div class="container">
     <h1>Welcome to Demo</h1>
