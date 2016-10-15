@@ -8,10 +8,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { SlimComponent } from './slim.component';
 import { DndComponent } from './dnd.component';
+import { ToastComponent } from './toast.component';
 
 const appRoutes: Routes = [
   {path: '',        component: HomeComponent},
-  {path: 'toasty',  component: HomeComponent}, //ToastComponent},
+  {path: 'toasty',  component: ToastComponent},
   {path: 'dnd',     component: DndComponent},
   {path: 'slim',    component: SlimComponent}
 ];

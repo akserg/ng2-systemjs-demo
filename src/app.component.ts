@@ -7,6 +7,8 @@ import { ActivatedRoute, NavigationEnd} from '@angular/router';
 
 import {SlimLoadingBarComponent, SlimLoadingBarService} from 'ng2-slim-loading-bar';
 
+import {ToastCommunicationService} from './toast-communication.service';
+
 @Component({
   selector: 'demo-app',
     template:`
@@ -23,18 +25,18 @@ import {SlimLoadingBarComponent, SlimLoadingBarService} from 'ng2-slim-loading-b
     </div>
 </header>
 
-
-<div>
-    <router-outlet></router-outlet>
-    <ng2-toasty></ng2-toasty>
-</div>
+<router-outlet></router-outlet>
+<ng2-toasty [position]="position"></ng2-toasty>
 <ng2-slim-loading-bar></ng2-slim-loading-bar>
 `
 })
-export class AppComponents {
+export class AppComponent {
     private sub: any;
+    private position: string;
 
-    constructor(private slimLoader: SlimLoadingBarService, private router: ActivatedRoute) {
+    constructor(private slimLoader: SlimLoadingBarService, private router: ActivatedRoute, private toastCommunicationService: ToastCommunicationService) {
+        // We listen the position's changes
+        this.toastCommunicationService.position$.subscribe(pos => this.position = pos);
     }
 
     ngOnInit(): any {
