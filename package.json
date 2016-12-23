@@ -10,8 +10,8 @@
     "url": "https://github.com/akserg/ng2-demo/issues"
   },
   "scripts": {
-    "play": "gulp play",
-    "start": "npm run play"
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "lite": "lite-server"
   },
   "homepage": "https://github.com/akserg/ng2-demo#readme",
   "dependencies": {
@@ -34,15 +34,10 @@
     "ng2-dnd": "^2.1.1"
   },
   "devDependencies": {
-    "@types/node": "6.0.46",
-    "connect": "^3.4.0",
-    "del": "^1.2.0",
-    "gulp": "^3.9.0",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-typescript": "^2.8.0",
-    "open": "0.0.5",
-    "serve-static": "^1.10.0",
-    "typescript": "^2.0.3",
-    "typings": "^1.4.0"
+    "@types/node": "^6.0.46",
+
+    "concurrently": "^3.1.0",
+    "lite-server": "^2.2.2",
+    "typescript": "~2.0.10"
   }
 }

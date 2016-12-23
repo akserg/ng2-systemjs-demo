@@ -299,7 +299,7 @@ export class DndComponent {
     ];
 
     widgets: Array<Widget> = [];
-    addTo($event) {
+    addTo($event: any) {
         if ($event) {
             this.widgets.push($event.dragData);
         }
@@ -312,12 +312,12 @@ export class DndComponent {
         this.availableProducts.push(new Product('Blue Jeans', 4, 60));
     }
 
-    orderedProduct($event) {
+    orderedProduct($event: any) {
         let orderedProduct: Product = $event.dragData;
         orderedProduct.quantity--;
     }
 
-    addToBasket($event) {
+    addToBasket($event: any) {
         let newProduct: Product = $event.dragData;
         for (let indx in this.shoppingBasket) {
             let product: Product = this.shoppingBasket[indx];
@@ -341,7 +341,7 @@ export class DndComponent {
         return cost;
     }
 
-    transferDataSuccess($event) {
+    transferDataSuccess($event: any) {
         this.receivedData.push($event);
     }
 }

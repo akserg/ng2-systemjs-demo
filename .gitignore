@@ -1,5 +1,5 @@
 node_modules
 npm-debug.log
-dist
 .idea
-typings
+src/*.js
+src/*.js.map

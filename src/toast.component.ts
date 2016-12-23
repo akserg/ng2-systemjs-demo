@@ -219,7 +219,7 @@ export class ToastComponent {
         this.toastyService.clearAll();
     }
 
-    changePosition($event) {
+    changePosition($event: string) {
         this.position = $event;
         // Update position of the Toasty Component
         this.toastCommunicationService.setPosition(this.position);

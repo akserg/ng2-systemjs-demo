@@ -12,7 +12,7 @@ export class ToastCommunicationService {
     // Observable string streams
     position$ = this.positionSource.asObservable();
 
-    setPosition(position) {
+    setPosition(position: string) {
         this.positionSource.next(position);
     }
 }
