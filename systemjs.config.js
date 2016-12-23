@@ -23,9 +23,9 @@
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       // other libraries
       'rxjs': 'npm:rxjs',
-      'ng2-toasty': 'node_modules/ng2-toasty',
-      'ng2-dnd': 'node_modules/ng2-dnd',
-      'ng2-slim-loading-bar': 'node_modules/ng2-slim-loading-bar'
+      'ng2-toasty': 'node_modules/ng2-toasty/bundles/index.umd.js',
+      'ng2-dnd': 'node_modules/ng2-dnd/bundles/index.umd.js',
+      'ng2-slim-loading-bar': 'node_modules/ng2-slim-loading-bar/bundles/index.umd.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -34,18 +34,6 @@
         defaultExtension: 'js'
       },
       rxjs: {
-        defaultExtension: 'js'
-      },
-      'ng2-toasty': {
-        main: './index.js',
-        defaultExtension: 'js'
-      },
-      'ng2-dnd': {
-        main: './index.js',
-        defaultExtension: 'js'
-      },
-      'ng2-slim-loading-bar': {
-        main: './index.js',
         defaultExtension: 'js'
       }
     }
