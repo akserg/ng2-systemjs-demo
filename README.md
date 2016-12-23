@@ -2,7 +2,7 @@
 
 > A minimal [Angular2](https://angular.io/) playground using [TypeScript](http://www.typescriptlang.org/) and [SystemJS loader](https://github.com/systemjs/systemjs)
 
-> This is a fork of [ng2-play](https://github.com/pkozlowski-opensource/ng2-play) to demonstrate the use of different libraries such:
+> This project demonstrates the use of different libraries such:
 > - [ng2-dnd](https://github.com/akserg/ng2-dnd): Angular 2 Drag-and-Drop without dependencies
 > - [ng2-toasty](https://github.com/akserg/ng2-toasty): Angular2 Toasty component shows growl-style alerts and messages for your application
 > - [ng2-slim-loading-bar](https://github.com/akserg/ng2-slim-loading-bar): Angular 2 component shows slim loading bar at the top of the page
