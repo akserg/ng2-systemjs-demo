@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { ToastyModule } from 'ng2-toasty';
 import { DndModule } from 'ng2-dnd';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { DemoDndModule } from './dnd/demo-dnd.module';
 
 import { HomeComponent } from './home.component';
 import { SlimComponent } from './slim.component';
@@ -23,7 +24,7 @@ import { routing } from './app.routing';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, routing,
-        ToastyModule.forRoot(), DndModule.forRoot(), SlimLoadingBarModule.forRoot()],
+        ToastyModule.forRoot(), DndModule.forRoot(), SlimLoadingBarModule.forRoot(), DemoDndModule],
     declarations: [AppComponent, HomeComponent, SlimComponent, DndComponent, ToastComponent],
     providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }, ToastCommunicationService],
     bootstrap: [AppComponent]
