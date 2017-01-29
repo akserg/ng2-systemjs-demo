@@ -3,3 +3,5 @@ npm-debug.log
 .idea
 src/*.js
 src/*.js.map
+src/*.d.ts
+.DS_Store

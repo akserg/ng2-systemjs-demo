@@ -12,11 +12,13 @@ import {Component, Injectable} from '@angular/core';
         <simple-dnd></simple-dnd>
         <zone-dnd></zone-dnd>
         <custom-data-dnd></custom-data-dnd>
+        <custom-function-dnd></custom-function-dnd>
         <shoping-basket-dnd></shoping-basket-dnd>
         
         <simple-sortable></simple-sortable>
-        <multi-sortable></multi-sortable>
         <recycle-multi-sortable></recycle-multi-sortable>
+        <simple-sortable-copy></simple-sortable-copy>
+        <multi-sortable></multi-sortable>
         <embedded-sortable></embedded-sortable>
     </div>
 </div>`
