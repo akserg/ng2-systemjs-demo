@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'multi-sortable',
@@ -11,9 +11,9 @@ import {Component} from '@angular/core';
         Available boxers
         </div>
         <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listBoxers">
-        <ul class="list-group" >
-            <li *ngFor="let item of listBoxers; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
-        </ul>
+            <ul class="list-group" >
+                <li *ngFor="let item of listBoxers; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+            </ul>
         </div>
     </div>
     </div>
@@ -23,9 +23,9 @@ import {Component} from '@angular/core';
         First Team
         </div>
         <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listTeamOne">
-        <ul class="list-group" >
-            <li *ngFor="let item of listTeamOne; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
-        </ul>
+            <ul class="list-group" >
+                <li *ngFor="let item of listTeamOne; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+            </ul>
         </div>
     </div>
     </div>
@@ -35,9 +35,9 @@ import {Component} from '@angular/core';
         Second Team
         </div>
         <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listTeamTwo">
-        <ul class="list-group">
-            <li *ngFor="let item of listTeamTwo; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
-        </ul>
+            <ul class="list-group">
+                <li *ngFor="let item of listTeamTwo; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+            </ul>
         </div>
     </div>
     </div>

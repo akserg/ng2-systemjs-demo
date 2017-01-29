@@ -31,7 +31,7 @@
     "zone.js": "^0.7.6",
     "ng2-slim-loading-bar": "^2.3.0",
     "ng2-toasty": "^2.3.0",
-    "ng2-dnd": "^2.2.1"
+    "ng2-dnd": "^2.2.2"
   },
   "devDependencies": {
     "@types/node": "^6.0.46",

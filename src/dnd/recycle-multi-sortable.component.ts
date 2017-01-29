@@ -10,9 +10,9 @@ import {Component} from '@angular/core';
             <div class="panel-heading">
                 Favorite drinks
             </div>
-            <div class="panel-body">
-                <ul class="list-group" dnd-sortable-container [sortableData]="listTwo" [dropZones]="['delete-dropZone']">
-                    <li *ngFor="let item of listTwo; let i = index" class="list-group-item"
+            <div class="panel-body" dnd-sortable-container [sortableData]="listOne" [dropZones]="['delete-dropZone']">
+                <ul class="list-group">
+                    <li *ngFor="let item of listOne; let i = index" class="list-group-item"
                     dnd-sortable [sortableIndex]="i">{{item}}</li>
                 </ul>
             </div>
@@ -20,11 +20,11 @@ import {Component} from '@angular/core';
     </div>
     <div class="col-sm-6">
         <div class="panel panel-default">
-            <div class="panel-body"
-                dnd-sortable-container
-                [dropZones]="['delete-dropZone']"
-                [sortableData]="listRecycled">
+            <div class="panel-body" dnd-sortable-container [dropZones]="['delete-dropZone']" [sortableData]="listRecycled">
                 Recycle bin: Drag into me to delete it<br/>
+                <!--ul class="list-group" >
+                    <li *ngFor="let item of listRecycled; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+                </ul-->
             </div>
         </div>
         <div *ngIf="listRecycled.length">
@@ -34,6 +34,6 @@ import {Component} from '@angular/core';
 </div>`
 })
 export class RecycleMultiSortableComponent {
-    listTwo: Array<string> = ['Coffee', 'Orange Juice', 'Red Wine', 'Unhealty drink!', 'Water'];
+    listOne: Array<string> = ['Coffee', 'Orange Juice', 'Red Wine', 'Unhealty drink!', 'Water'];
     listRecycled: Array<string> = [];
 }
